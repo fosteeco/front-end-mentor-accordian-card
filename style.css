@@ -146,7 +146,12 @@ img.arrow-icon {
   text-align: center;
 }
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  /* color: hsl(228, 45%, 44%); */
+  color: var(--white);
+}
+
+.attribution a:hover {
+  opacity: 0.5;
 }
 
 @media (max-width: 830px) {
