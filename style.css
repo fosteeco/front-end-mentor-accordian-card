@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
 
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --veryDesaturatedBlue: hsl(238, 29%, 16%);
   --bodyLinearGradient: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
@@ -18,14 +22,19 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0;
+}
+
+.accordian-wrapper {
+  position: relative;
+  padding: 0 20px;
+  width: 900px;
 }
 
 .accordian-card {
   border-radius: 10px;
   background-color: var(--white);
-  width: 900px;
   display: flex;
-  padding: 20px;
   min-height: 450px;
   overflow: hidden;
 }
@@ -50,10 +59,18 @@ body {
   z-index: 1;
 }
 
+img.box-img {
+  position: absolute;
+  left: -8.1%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+}
+
 .accordian-image-container img.bg-image {
   position: absolute;
   bottom: -50%;
-  left: -135%;
+  left: -142%;
   z-index: 0;
 }
 
@@ -133,10 +150,18 @@ img.arrow-icon {
 }
 
 @media (max-width: 830px) {
+  .box-img {
+    display: none;
+  }
+  .accordian-wrapper {
+    width: 100%;
+  }
   .accordian-card {
     flex-wrap: wrap;
+    width: 100%;
     overflow: visible;
     justify-content: center;
+    padding: 20px;
   }
   .accordian-image-container {
     width: 283px;
